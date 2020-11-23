@@ -7,12 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>User Profile</h1>
-	
-	Email: ${ user.email }<br />
-	Password: ${ user.password }<br />
-	
-	<a href="/logout">Logout</a>
+	<h1>Thank you for registering with ${ user.email }</h1>
 
 </body>
 </html>

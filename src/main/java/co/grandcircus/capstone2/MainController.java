@@ -17,13 +17,26 @@ public class MainController {
 	@Autowired
 	HttpSession session;
 	
+	@PostMapping("register")
+	public String register(User user) {
+		urep.save(user);
+		session.setAttribute("user", user);
+		return "register";
+	}
+	
+	@GetMapping("/logout")
+	public String logout() {
+		session.invalidate();
+		return "redirect:/";
+	}
+	
 	@GetMapping("/")
 	public String index() {
 		return "index";
 	}
 	
 	@PostMapping("/login")
-	public String login(Integer id, String email, String password, Model model) {
+	public String login(String email, String password, Model model) {
 		
 		User user = urep.findFirstByEmail(email).orElse(null);
 		if (user == null) {
@@ -42,5 +55,7 @@ public class MainController {
 		
 	}
 	
-
 }
+
+
+

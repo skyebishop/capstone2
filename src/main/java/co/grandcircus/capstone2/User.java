@@ -1,6 +1,8 @@
 package co.grandcircus.capstone2;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -8,7 +10,7 @@ import javax.persistence.Table;
 @Table(name="user")
 public class User {
 	
-	@Id
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY) 
 	private Integer id;
 	private String email;
 	private String password;
@@ -17,13 +19,17 @@ public class User {
 		
 	}
 
+
 	public Integer getId() {
 		return id;
 	}
 
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
+
+
 
 	public String getEmail() {
 		return email;
