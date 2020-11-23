@@ -1,0 +1,8 @@
+.settings
+.project
+.classpath
+*.class
+/bin
+.DS_Store
+src/main/resources/config/application.properties
+/target/
